@@ -1,0 +1,41 @@
+### authentication
+post http://localhost:3000/api/auth/login
+Content-Type: application/json
+
+{
+  "email":"mile@gmail.com",
+  "password":"123456"
+}
+
+### users
+GET http://localhost:3000/api/user
+Authorization: Bearer Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwiaWF0IjoxNjE5OTg0NzUyLCJleHAiOjE2MTk5ODgzNTJ9.oxFnCbL6JosSxwhfx1U4eSI4ZQpvuEAmQ0MseANSrBo
+
+###
+GET http://localhost:3000/api/user/5
+
+
+###
+POST http://localhost:3000/api/user
+Content-Type: application/json
+
+{
+  "name":"milena alejandra",
+  "lastname":" rios gallego",
+  "email":"pedro@gmail.com",
+  "password":"12356",
+  "roles":"user"
+}
+
+###
+DELETE  http://localhost:3000/api/user/delete?id=3
+
+###
+PUT http://localhost:3000/api/user/edit/5
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwiaWF0IjoxNjE5OTg5MTU4LCJleHAiOjE2MTk5OTI3NTh9.nvcjamONKqYre5GbxLRVDWqOM-r-lbvm2_yEAqmxOPc
+
+{
+  "roles":"admin"
+
+}
