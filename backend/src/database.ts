@@ -6,9 +6,9 @@ createConnection({
     host: "localhost",
     port: 3306,
     username: "root",
-    password: "",
+    password: "root",
     database: "roles",
     entities:[User],
     synchronize: true,
 }).then( (db ) =>console.log('db isconnected'))
-  .catch ((error) =>console.log(error))
+  .catch ((error) =>console.log(error))  

@@ -9,8 +9,6 @@ import {map} from 'rxjs/operators'
 import {JwtHelperService} from '@auth0/angular-jwt'
 import { Router } from '@angular/router';
 
-
-
 const helper = new JwtHelperService()
 
 @Injectable({
@@ -43,19 +41,20 @@ export class AuthService {
 
     logout(){
       localStorage.removeItem('token')
-      this.location.go('/auth/login')
     }
 
     checkToken(){
       const token = JSON.parse(localStorage.getItem('token'))
       this.isExpired = helper.isTokenExpired(token)
       this.isExpired ? this.logout() : ''
+      console.log(this.isExpired)
     }
 
     readToken(){
        const token = JSON.parse(localStorage.getItem('token'))
        if(token) return true
-        this.router.navigate(['/auth/login'])  
+      
+       this.router.navigate(['/auth/login'])  
     }
 
     saveToken(token){
