@@ -10,6 +10,8 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { AuthModule } from './pages/auth/auth.module';
 import { HttpClientModule } from '@angular/common/http';
 import { AuthService } from './pages/auth/services/auth.service';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { AuthService } from './pages/auth/services/auth.service';
     AppRoutingModule,
     HomeModule,
     AuthModule,
-    HttpClientModule
+    HttpClientModule,
+    InfiniteScrollModule,
+    BrowserAnimationsModule
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]
